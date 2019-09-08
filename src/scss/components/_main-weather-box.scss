@@ -1,0 +1,87 @@
+.main-positioner{
+  width: 35rem;
+  margin: 0 auto;
+  @include respons(tablet) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @include respons(phone) {
+    width: 26rem;
+  }
+}
+
+.main {
+  text-align: center;
+  align-self: center;
+  flex: 1;
+  @include respons(tablet) {
+    position: relative;
+    width: 100%;
+  }
+
+  .openbtn{
+    position: absolute;
+        top: 1.5rem;
+        left: 2rem;
+        color: $color-white;
+        text-decoration: none;
+        font-size: 3.5rem;
+        display: none;
+        @include respons(phone) {
+            display: inline;
+          }
+  }
+
+  &__box1 {
+    position: relative;
+    margin-bottom: 2rem;
+    word-wrap: break-word;
+    &--icon {
+      position: absolute;
+      right: -25%;
+      top: -40%;
+      height: 11rem;
+      width: 11rem;
+      @include respons(phone) {
+        height: 8rem;
+        width: 8rem;
+            }
+    }
+    &--paragraph {
+      font-size: 1.9rem;
+    }
+  }
+
+  &__box2 {
+    display: flex;
+    align-items: center;
+    div {
+      padding: 1rem;
+    }
+    &--minMax{
+      @include respons(phone) {
+        text-align: left;
+      }
+    }
+  }
+
+  &__box3{
+    display: flex;
+    justify-content: stretch;
+    .weather-info {
+      flex: 1;
+      text-align: center;
+      border-left: 1px solid $color-white-transparent;
+      line-height: 3rem;
+      &--bold {
+        display: block;
+        font-weight: 400;
+      }
+      &:last-child {
+        border-right: 1px solid $color-white-transparent;
+      }
+    }
+  }
+}
